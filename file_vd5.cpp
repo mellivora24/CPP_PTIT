@@ -6,20 +6,19 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr); cout.tie(nullptr);
 
-    long long num;
-    map<long long, int> res;
-
     ifstream in;
     in.open("DATA.in");
 
+    int num;
+    int res[1005];
     while (in >> num) {
-        if (num < 1000) res[num]++;
+        res[num]++;
     }
 
-    sort(res.begin(), res.end());
-
-    for (auto index : res) cout << index.first << " " << index.second;
+    for (int i=0; i<=1000; i++)
+        if (res[i]!=0) cout << i << " " << res[i];
 
     in.close();
+
     return 0;
 }
