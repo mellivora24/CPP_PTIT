@@ -23,33 +23,15 @@ public:
     }
 
     void setID(int id) { this->id = id; }
-    void setName(const string& name) { this->name = name;
-    }
-    void setAge(int age) {
-        this->age = age;
-    }
-    void setAddress(const string& address) {
-        this->address = address;
-    }
-    void setScore(int score) {
-        this->score = score;
-    }
+    void setName(const string& name) { this->name = name; }
+    void setAge(int age) { this->age = age; }
+    void setAddress(const string& address) { this->address = address; }
+    void setScore(int score) { this->score = score; }
 
-    // Getters
-    int getID() const {
-        return id;
-    }
-    string getName() const {
-        return name;
-    }
-    int getAge() const {
-        return age;
-    }
-    string getAddress() const {
-        return address;
-    }
-    int getScore() const {
-        return score;
-    }
+    int getID() { return id; }
+    string getName() { return name; }
+    int getAge() { return age; }
+    string getAddress() { return address; }
+    int getScore() { return score; }
 };
 
