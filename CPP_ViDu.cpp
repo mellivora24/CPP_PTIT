@@ -1,7 +1,5 @@
 #include <bits/stdc++.h>
 
-#include <utility>
-
 using namespace std;
 
 class Student {
@@ -35,3 +33,6 @@ public:
     int getScore() { return score; }
 };
 
+int main() {
+    return 0;
+}
