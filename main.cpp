@@ -33,7 +33,7 @@ public:
     }
 };
 
-bool cmp(Student &A, Student &B) {
+bool cmp(Student A, Student B) {
     if (A.classroom > B.classroom) return false;
     if (A.classroom < B.classroom) return true;
     if (A.id > B.id) return false;
@@ -41,16 +41,13 @@ bool cmp(Student &A, Student &B) {
 }
 
 int main() {
-    int numOfStudent, temp;
+    int numOfStudent;
     cin >> numOfStudent; cin.ignore();
-    temp = numOfStudent;
-
     Student SV[numOfStudent+1];
-    while (numOfStudent--) SV[numOfStudent-1].GetInformation();
 
-    sort(SV, SV+temp, cmp);
-
-    for (int i=0; i<temp; i++) SV[i].PrintInformation();
+    for (int i=0; i<numOfStudent; i++) SV[i].GetInformation();
+    sort(SV, SV+numOfStudent, cmp);
+    for (int i=0; i<numOfStudent; i++) SV[i].PrintInformation();
 
     return 0;
 }
