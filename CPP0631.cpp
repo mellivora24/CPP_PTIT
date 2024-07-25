@@ -49,51 +49,50 @@ istream & operator >> (istream & in, KhachHang & kh) {
 
 class MatHang {
 private:
-	string maMH,tenMH,donvi;
-	int giamua,giaban;
+	string maMH, tenMH, donvi;
+	int giamua, giaban;
 
 public:
-	friend istream& operator>>(istream &in,MatHang &mh);
-	friend ostream& operator<<(ostream &out, const HoaDon&hd);
+	friend istream & operator >> (istream & in, MatHang & mh);
+	friend ostream & operator << (ostream & out, const HoaDon & hd);
 	friend class HoaDon;
-
 };
 
-istream& operator>>(istream &in,MatHang &mh){
-	scanf("\n")
+istream & operator >> (istream & in, MatHang & mh) {
+	scanf("\n");
 	++idMH;
-	chuanhoa(mh.maMH,idMH);
-	getlinr(in,mh.tenMH);
-	getlinr(in,mh.donvi);
-	in>>mh.giamua>>mh.giaban;
-	mpMH=[mh.maMH]= mh;
+	chuanhoa(mh.maMH, idMH);
+	getline(in, mh.tenMH);
+	getline(in, mh.donvi);
+	in >> mh.giamua >> mh.giaban;
+	mpMH[mh.maMH] = mh;
 	return in;
 }
 
-class HoaDon{
-	private:
-		string maMH="MH",maKH,maMH;
-		int soluong;
+class HoaDon {
+private:
+	string maMH="MH", maKH, maMD;
+	int soluong;
 
-	public:
-		friend istream& operator>>(istream &in,HoaDon &hd);
-		friend ostream& operator<<(ostream &out, const HoaDon&hd);
+public:
+	friend istream & operator >> (istream & in, HoaDon & hd);
+	friend ostream & operator << (ostream & out, const HoaDon & hd);
 };
 
-istream& operator>>(istream &in,HoaDon &hd){
+istream & operator >> (istream &in, HoaDon & hd) {
 	scanf("\n");
 	++idHD;
-	chuanhoa(hd.maHD,idHD);
-	in>>hd.maKH>>hd.maMH>>hd.soluong;
+	chuanhoa(hd.maMH, idHD);
+	in >> hd.maKH >> hd.maMH >> hd.soluong;
 	return in;
 }
 
-ostream& operator<<(ostream &out, const HoaDon&hd){
-	out<<hd.maHD<<" ";
-	KhachHang kh=mpKH[hd.maKH];
-	out<<kh.tenKH<<" "<<kh.diachi<<" ";
-	MatHang mh= mpMH[hd.maMH];
-	out<<mh.tenMH<<" "<<mh.donvi<<" "<<mh.giamua<<" "<<mh.giaban<<" "<<hd.soluong<<" ";
+ostream & operator << (ostream & out, const HoaDon & hd) {
+	out << hd.maMD << " ";
+	KhachHang kh = mpKH[hd.maKH];
+	out << kh.tenKH << " " << kh.diachi <<" ";
+	MatHang mh = mpMH[hd.maMH];
+	out << mh.tenMH << " " << mh.donvi << " " << mh.giamua << " " << mh.giaban << " " << hd.soluong << " ";
 }
 
 int main(){
